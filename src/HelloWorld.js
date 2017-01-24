@@ -13,11 +13,16 @@ class HelloWorld extends Component {
 				{this.state.greeting} {this.props.name}!
 				<br/>
 				<button onClick={this.frenchify}>Frenchify!</button>
+				<br/>
+      			<button onClick={this.removeGreeting}>Remove Me!</button>
 			</div>
 		);
 	}
 	frenchify() {
 		this.setState({ greeting:"Bonjour" });
+	}
+	removeGreeting = () => {
+		this.props.removeGreeter(this.props.name);
 	}
 }
 
